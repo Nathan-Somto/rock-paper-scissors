@@ -1,3 +1,5 @@
+// user input
+const numberOfRounds=prompt("Enter the number of rounds You will like to Play: ");
 // the getComputerChoice function
 function random (number){
     return Math.floor(Math.random()*number);
@@ -14,10 +16,10 @@ function playRound(playerSelection,computerSelection){
     
         //computer wins
     if(correctPlayerSelection==="rock" && computerSelection==="paper"){
-        return " You lose! Paper beats Rock !";
+        return "You lose! Paper beats Rock !";
     }
     else if(correctPlayerSelection==="paper"&&computerSelection==="scissors"){
-        return " You lose! scissors cuts paper";
+        return "You lose! scissors cuts paper";
     }
     else if(correctPlayerSelection==="scissors" &&computerSelection==="rock"){
         return "You lose! rock smashes scissors"
@@ -31,10 +33,10 @@ function playRound(playerSelection,computerSelection){
 
     // player wins
     else if(correctPlayerSelection==="paper" && computerSelection==="rock"){
-        return " You win! Paper beats Rock !";
+        return "You win! Paper beats Rock !";
     }
     else if(correctPlayerSelection==="scissors"&&computerSelection==="paperr"){
-        return " You win! scissors cuts paper";
+        return "You win! scissors cuts paper";
     }
     else if(correctPlayerSelection==="rock" && computerSelection==="scissors"){
         return "You win! rock smashes scissors"
@@ -44,4 +46,30 @@ function playRound(playerSelection,computerSelection){
         return "Check your Input";
     }
 }
-console.log(playRound("Paper",getComputerChoice()));
+// game function
+function game (){
+    let userChoice;
+    let result;
+    let userCount=0;
+    let computerCount=0;
+    for (let i=0; i<numberOfRounds;i++){
+userChoice=prompt("Enter either rock,paper or scissors");
+result= playRound(userChoice,getComputerChoice());
+if(result.includes("You win!")){
+userCount+=1;
+}
+else if(result.includes("You lose!")){computerCount+=1}
+alert(`${result}`);
+    }
+    if(userCount>computerCount){
+        alert(`you won `);
+    }
+    else if (computerCount>userCount){
+        alert('you lost');
+    }
+    else{
+        alert('It ended in a tie');
+    }
+}
+// call game function
+game();
