@@ -1,5 +1,7 @@
 // user input
-const numberOfRounds=prompt("Enter the number of rounds You will like to Play: ");
+const numberOfRounds=5;
+//const playerName=prompt("Enter player name : ");
+const uiResult=document.querySelector('.choice');
 // the getComputerChoice function
 function random (number){
     return Math.floor(Math.random()*number);
@@ -9,7 +11,7 @@ function getComputerChoice(){
     return choices[random(choices.length)];
 
 };
-function playRound(playerSelection,computerSelection){
+function playRound(playerSelection,computerSelection=getComputerChoice()){
     let correctPlayerSelection=playerSelection.toLowerCase();
     // check value being passed to the function
     if(correctPlayerSelection==="paper"|| correctPlayerSelection==="scissors"||correctPlayerSelection==="rock"){
@@ -46,30 +48,55 @@ function playRound(playerSelection,computerSelection){
         return "Check your Input";
     }
 }
-// game function
-function game (){
-    let userChoice;
-    let result;
-    let userCount=0;
-    let computerCount=0;
-    for (let i=0; i<numberOfRounds;i++){
-userChoice=prompt("Enter either rock,paper or scissors");
-result= playRound(userChoice,getComputerChoice());
-if(result.includes("You win!")){
-userCount+=1;
-}
-else if(result.includes("You lose!")){computerCount+=1}
-alert(`${result}`);
-    }
-    if(userCount>computerCount){
-        alert(`you won `);
-    }
-    else if (computerCount>userCount){
-        alert('you lost');
-    }
-    else{
-        alert('It ended in a tie');
-    }
-}
 // call game function
-game();
+// image change for when button is clicked
+const btn=document.querySelector('.buttons');
+let round=0;
+let result="";
+let userCount=0;
+let computerCount=0;
+function game(event){
+     if(round!==numberOfRounds){
+    if(event.target.id==="rock"){
+        result=playRound('rock');
+    
+    }
+    else if(event.target.id==='paper'){
+        result=playRound('paper');
+    }
+    else if(event.target.id==='scissors'){
+        result=playRound('scissors');
+        
+    }
+    console.log(result);
+    round+=1;
+      if(result.includes("You win!")){
+        userCount+=1;
+        }
+        else if(result.includes("You lose!")){
+            computerCount+=1
+        }
+    
+    if(round===numberOfRounds){
+        if(userCount>computerCount){
+            uiResult.textContent='you won! :)';
+        }
+        else if (computerCount>userCount){
+            uiResult.textContent='you lost! :(';
+        }
+        else{
+            uiResult.textContent='it ended in a tie! :|';
+        }
+    }
+    
+}
+
+    
+  
+ 
+}
+// create reset game function
+    btn.addEventListener('click',game);
+
+// modal handler
+const reset =document.querySelector("#");

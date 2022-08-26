@@ -5,27 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/Javascript/projects/rock-paper-scissors/index.js" defer></script> 
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+<img src="/Javascript/projects/rock-paper-scissors/rps.jpg" alt="" class="bg">
+    
     <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <p>First to score 5 points wins.</p>
         <div class="playBoard">
-            <div class="playerChoice">
-                <h3>You : <span id="userScore">0</span></h3>
-                <img id="userSelect"src="#" alt="none" srcset="">
+            <div class="playerChoice bgcolor">
+                <h3>You : <span id="userScore">0</span></h3> <!-- use an alert to change the you to player name -->
+                <img id="userSelect"src="/Javascript/projects/rock-paper-scissors/rock.svg" alt="none" srcset="">
             </div>
-            <div class="computerChoice">            
+            <div class="computerChoice bgcolor">            
                 <h3>Computer : <span id="computerScore">0</span></h3>
                 <img  id="computerSelect"src="#" alt="none" srcset="">
             </div>
+            
         </div>
-        <span>Choose One!</span>
+        <span class="choice">Choose One!</span>
         <div class="buttons">
-            <a id="rock"><img src="/Javascript/projects/rock-paper-scissors/rock.svg" alt="rock_button" srcset=""></a>
-            <a id="paper"><img src="/Javascript/projects/rock-paper-scissors/paper.svg" alt="paper_button" srcset=""></a>
-            <a id="scissors"><img src="/Javascript/projects/rock-paper-scissors/scissors.svg" alt="scissors_button" srcset=""></a>
+            <button class="btn" id="rock"><img src="/Javascript/projects/rock-paper-scissors/rock.svg" alt="rock_button" srcset=""></button>
+            <button class="btn" id="paper"><img src="/Javascript/projects/rock-paper-scissors/paper.svg" alt="paper_button" srcset=""></button>
+            <button class="btn" id="scissors"><img src="/Javascript/projects/rock-paper-scissors/scissors.svg" alt="scissors_button" srcset=""></button>
         </div>
     </div>
-    <!-- <script src="/Javascript/projects/rock-paper-scissors/index.js"></script> -->
+    <!-- Pop up skeleton for game result -->
+ 
+    <div class="overlay"></div>
+    <div class="modal">
+        <p id="Modal-title">You Won!</p>
+        <button class="Modal-btn" id="reset">Try again</button>
+            </div>
+          
 </body>
 </html>
