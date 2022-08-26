@@ -71,6 +71,7 @@ function playRound(playerSelection,computerSelection=getComputerChoice()){
     }}
    
     else{
+        winner='';
         return "Check your Input";
     }
 }
@@ -132,26 +133,26 @@ function game(event){
         result=playRound('rock');
         setImageUser(event);
       
-        setTimeout(setImageComputer,1000);
+        setTimeout(setImageComputer,500);
        
-        setTimeout(setUiResult,2000);
+        setTimeout(setUiResult,1000);
     
     }
     else if((event.target.id==='paper')||(event.target.parentElement.id==="paper")){
         result=playRound('paper');
         setImageUser(event);
       
-        setTimeout(setImageComputer,1000);
+        setTimeout(setImageComputer,500);
        
-        setTimeout(setUiResult,2000);
+        setTimeout(setUiResult,1000);
     }
     else if((event.target.id==='scissors') || (event.target.parentElement.id==="scissors")){
         result=playRound('scissors');
         setImageUser(event);
         
-        setTimeout(setImageComputer,1000);
+        setTimeout(setImageComputer,500);
        
-        setTimeout(setUiResult,2000);
+        setTimeout(setUiResult,1000);
     }
     
     round+=1;
@@ -165,7 +166,7 @@ function game(event){
         }
     
         if((userCount===5)||(computerCount===5)){
- setTimeout(displayModal(),5000);
+ setTimeout(displayModal(),3000);
         
     }
     
@@ -184,8 +185,8 @@ function resetGame (){
     userScore.textContent=0;
     computerCount=0;
     userCount=0;
-    computerSelect.setAttribute('src','#');
-    userSelect.setAttribute('src','#');
+    computerSelect.setAttribute('src','/Javascript/projects/rock-paper-scissors/qmark.svg');
+    userSelect.setAttribute('src','/Javascript/projects/rock-paper-scissors/qmark.svg');
     overlay.classList.remove('active');
     modal.classList.remove('active');
     overlay.classList.add('inactive');
