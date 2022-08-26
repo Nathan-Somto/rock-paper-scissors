@@ -15,14 +15,14 @@ body{
     color:rgba(255,255,255,0.85);
 
 }
-/* html{
-    background:url("/Javascript/projects/rock-paper-scissors/rps.jpg");
-    background-repeat: no-repeat;
-    background-size:100vw 100vh;
-  
-   
+h1{
+    margin:0;
+    font-size:2.5em;
+}
+.game-container p{
+    font-size:1.2em;
+}
 
-} */
 img.bg{
     min-height:100%;
     min-width:100%;
@@ -33,7 +33,7 @@ img.bg{
     left:0;
     z-index:1;
 }
-h1{
+.game-container {
     text-align: center;
 }
 
@@ -47,12 +47,21 @@ span{
 }
 .bgcolor{
     width:45%;
-    height:250px;
+    height:180px;
+   
   
+}
+@media (min-width:500px){
+    .bgcolor{
+        height:250px;
+    }
 }
 
 .bgcolor{
-  
+  /*   display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+  align-items: center; */
     box-shadow:inset 0 0 0 200px rgba(255,255,255,0.08);
     border-top:2px solid rgba(225,225,225,0.3);
     border-left:2px solid rgba(225,225,225,0.1);
@@ -66,14 +75,13 @@ span{
     flex-direction: column;
     width:80vw;
     height:80vh;
-   
+   min-height:80vh;
     position: relative;
     top:0;
     left:0;
     z-index:2;
-   
-    
 }
+
 .game-container,.overlay{
     -webkit-backdrop-filter:blur(8px);
     backdrop-filter:blur(8px);
@@ -89,30 +97,37 @@ padding-bottom:10px;
     margin:0;
 }
 .bgcolor>img{
-    width:30%;
-    max-width:50%;
-    height:auto;
-   display:block;
-  margin:10px auto;
+    width:50%;
+    
+    display:block;
+    margin:50px auto;
+ 
 }
+@media (min-width:500px){
+    .bgcolor>img{
+        width:30%;
+        margin:10px auto;
+    }
+}
+
 .h3>span{
     display:inline-block;
     font-size: 1.5em;
 }
 .playBoard{
-    margin:0;
-    padding:0;
+   /*  margin:0;
+    padding:0; */
     display:flex;
     justify-content:space-evenly;
     gap:16px;
 }
-.imgContainer{
+/* .imgContainer{
     width:100vw;
     position:relative;
-}
+} */
 
 .choice{
-    margin:0 auto;
+    margin:5px auto;
     font-size: 1.25em;
    color:#fff !important;
    background: linear-gradient(to right,rgb(172, 62, 112),purple);
@@ -126,13 +141,14 @@ padding-bottom:10px;
      align-items: center; 
     flex:1;
 }
-.btn img{
-    height:auto;
-    /* min-width:20%; */
+/* .btn img{
+    height:5px;
+     min-width:20%; 
     min-width:75%;
     width:80%;
-   
-}
+    min-height:100px; 
+} */
+
  .btn{
     background-color: rgba(0,0,0 ,0.45);
     width:10%;

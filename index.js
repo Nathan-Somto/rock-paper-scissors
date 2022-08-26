@@ -61,7 +61,7 @@ function playRound(playerSelection,computerSelection=getComputerChoice()){
         winner ='player';
         return "Paper beats Rock !";
     }
-    else if(correctPlayerSelection==="scissors"&&computerSelection==="paperr"){
+    else if(correctPlayerSelection==="scissors"&&computerSelection==="paper"){
         winner='player';
         return " Scissors cuts paper";
     }
@@ -127,7 +127,7 @@ else if(computerChoices==='scissors'){
 
 function game(event){
     console.log(event.target.parentElement.id);
-     if(round!==numberOfRounds){
+     if((userCount!==5)||(computerCount!==5)){
     if((event.target.id==="rock")||( event.target.parentElement.id==="rock")){
         result=playRound('rock');
         setImageUser(event);
@@ -153,7 +153,7 @@ function game(event){
        
         setTimeout(setUiResult,2000);
     }
-    console.log(result);
+    
     round+=1;
       if(winner==="player"){
         userCount+=1;
@@ -164,7 +164,7 @@ function game(event){
             computerScore.textContent=computerCount;
         }
     
-    if(round===numberOfRounds){
+        if((userCount===5)||(computerCount===5)){
  setTimeout(displayModal(),5000);
         
     }
