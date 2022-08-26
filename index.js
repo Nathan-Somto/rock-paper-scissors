@@ -4,7 +4,9 @@ const reset =document.querySelector("#reset");
 const overlay =document.querySelector(".overlay");
 const modal =document.querySelector(".modal");
 const modalTitle=document.querySelector("#modalTitle");
-const btn=document.querySelector('.buttons');
+const rock=document.querySelector('#rock');
+const scissors=document.querySelector("#scissors");
+const paper= document.querySelector("#paper");
 const userScore= document.querySelector('#userScore');
 const computerScore =document.querySelector("#computerScore");
 const uiResult =document.querySelector('.choice');
@@ -91,14 +93,14 @@ function displayModal(){
 function setImageUser(event){
     // accepts events inner child as an argument and set the source 
    /*  event.target. */
-   if(event.target.id==="rock"){
+   if((event.target.id==="rock")||( event.target.parentElement.id==="rock")) {
     userSelect.setAttribute('src',imagePath[0]);
    }
-   else if(event.target.id==='scissors'){
-    userSelect.setAttribute('src',imagePath[2]);
-   }
-   else if(event.target.id=="paper"){
+   else if((event.target.id==='paper')||(event.target.parentElement.id==="paper")){
     userSelect.setAttribute('src',imagePath[1]);
+   }
+   else if((event.target.id==='scissors') || (event.target.parentElement.id==="scissors")){
+    userSelect.setAttribute('src',imagePath[2]);
 }
 
 
@@ -124,9 +126,9 @@ else if(computerChoices==='scissors'){
 
 
 function game(event){
-    console.log(event);
+    console.log(event.target.parentElement.id);
      if(round!==numberOfRounds){
-    if(event.target.id==="rock"){
+    if((event.target.id==="rock")||( event.target.parentElement.id==="rock")){
         result=playRound('rock');
         setImageUser(event);
       
@@ -135,7 +137,7 @@ function game(event){
         setTimeout(setUiResult,2000);
     
     }
-    else if(event.target.id==='paper'){
+    else if((event.target.id==='paper')||(event.target.parentElement.id==="paper")){
         result=playRound('paper');
         setImageUser(event);
       
@@ -143,7 +145,7 @@ function game(event){
        
         setTimeout(setUiResult,2000);
     }
-    else if(event.target.id==='scissors'){
+    else if((event.target.id==='scissors') || (event.target.parentElement.id==="scissors")){
         result=playRound('scissors');
         setImageUser(event);
         
@@ -170,7 +172,9 @@ function game(event){
 }
 }
 //  to run game function
-    btn.addEventListener('click',game);
+    rock.addEventListener('click',game);
+    scissors.addEventListener('click',game);
+    paper.addEventListener('click',game);
 
 // resetGame function
 function resetGame (){
