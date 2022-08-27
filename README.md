@@ -13,5 +13,5 @@
   **For now the project is not responsive**
 
   Here is a picture depicting the project.
-  ![project image](/assets/images/projectImage.png);
+  ![project image](images/projectImage.png)
 
