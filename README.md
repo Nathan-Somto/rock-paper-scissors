@@ -11,5 +11,7 @@
   I incorporated Glass morphism effect to the project.
   I took the functional programming route.
   **For now the project is not responsive**
+
   Here is a picture depicting the project.
   ![project image](/assets/images/projectImage.png);
+
