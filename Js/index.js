@@ -12,9 +12,8 @@ const computerScore =document.querySelector("#computerScore");
 const uiResult =document.querySelector('.choice');
 const computerSelect =document.querySelector("#computerSelect");
 const userSelect =document .querySelector("#userSelect");
-// the paths are relative to my computer so please update if cloned.
-// to lazy to do it myself.
-const imagePath=["/Javascript/projects/rock-paper-scissors/rock.svg","/Javascript/projects/rock-paper-scissors/paper.svg","/Javascript/projects/rock-paper-scissors/scissors.svg"];
+// finally up to date, clone as you please.
+const imagePath=["/images/rock.svg","/images/paper.svg","/images/scissors.svg"];
 // initalized values
 // to set things in order
 let computerChoices="";
@@ -195,8 +194,8 @@ function resetGame (){
     userScore.textContent=0;
     computerCount=0;
     userCount=0;
-    computerSelect.setAttribute('src','/Javascript/projects/rock-paper-scissors/qmark.svg');
-    userSelect.setAttribute('src','/Javascript/projects/rock-paper-scissors/qmark.svg');
+    computerSelect.setAttribute('src','/images/qmark.svg');
+    userSelect.setAttribute('src','/images/qmark.svg');
     overlay.classList.remove('active');
     modal.classList.remove('active');
     overlay.classList.add('inactive');
