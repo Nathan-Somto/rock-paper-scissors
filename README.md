@@ -13,4 +13,4 @@
   **For now the project is not responsive**
   the paths to the resources are currently relative to my computer , will update soon
   Here is a picture depicting  the project.
-  ![project image](/assets/projectImage.png);
+  ![project image](/assets/images/projectImage.png
