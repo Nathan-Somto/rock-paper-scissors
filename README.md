@@ -1,7 +1,16 @@
-a  short intro to my project
-This is a Browser Console Based game of Rock Paper Scissors.
-You will play the game through a Browser alert and prompt.
-you can specify how many rounds you want to play.
-I know it does not have much functionality yet but UI will be built in the future
-
-the Game was Created Using Pure Html and Javascript
+# Rock Paper Scissors game
+## Description
+  Do you love a game of rock paper scissors ? try out this game
+  rules of the game:
+  rock smashes scissors
+  scissors cuts  paper
+  paper covers rock
+  play against the computer
+  **first to  5 wins the game.**
+  Built with pure Html, CSS and Vanilla Javascript.
+  I incorporated Glass morphism effect to the project.
+  I took the functional programming route.
+  **For now the project is not responsive**
+  the paths to the resources are currently relative to my computer , will update soon
+  Here is a picture depicting  the project.
+  ![project image](/assets/projectImage.png);

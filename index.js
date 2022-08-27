@@ -1,5 +1,5 @@
 // dom values
-
+// all the html elements we will be needing
 const reset =document.querySelector("#reset");
 const overlay =document.querySelector(".overlay");
 const modal =document.querySelector(".modal");
@@ -12,19 +12,24 @@ const computerScore =document.querySelector("#computerScore");
 const uiResult =document.querySelector('.choice');
 const computerSelect =document.querySelector("#computerSelect");
 const userSelect =document .querySelector("#userSelect");
+// the paths are relative to my computer so please update if cloned.
+// to lazy to do it myself.
 const imagePath=["/Javascript/projects/rock-paper-scissors/rock.svg","/Javascript/projects/rock-paper-scissors/paper.svg","/Javascript/projects/rock-paper-scissors/scissors.svg"];
+// initalized values
+// to set things in order
 let computerChoices="";
 let winner="";
-// initalized values
 let round=0;
 let result="";
 let userCount=0;
 let computerCount=0;
-const numberOfRounds=5;
-// the getComputerChoice function
+
+// random function
+// like why doesn't javascript have an inbuilt random function like python.
 function random (number){
     return Math.floor(Math.random()*number);
 };
+// the getComputerChoice function
 function getComputerChoice(){
     const choices=["rock","paper","scissors"];
     return choices[random(choices.length)];
@@ -71,7 +76,7 @@ function playRound(playerSelection,computerSelection=getComputerChoice()){
     }}
    
     else{
-        winner='';
+        winner=''; 
         return "Check your Input";
     }
 }
@@ -89,11 +94,13 @@ function displayModal(){
     overlay.classList.add('active');
     modal.classList.add('active');
 }
-// call game function
-// image change for when button is clicked
+
+
+// image changer functions
+// to see what you picked.
 function setImageUser(event){
     // accepts events inner child as an argument and set the source 
-   /*  event.target. */
+   
    if((event.target.id==="rock")||( event.target.parentElement.id==="rock")) {
     userSelect.setAttribute('src',imagePath[0]);
    }
@@ -125,7 +132,8 @@ else if(computerChoices==='scissors'){
     uiResult.textContent=result;
   }
 
-
+// game function
+// we going to be using it later, so lets declare it.
 function game(event){
     console.log(event.target.parentElement.id);
      if((userCount!==5)||(computerCount!==5)){
@@ -173,11 +181,13 @@ function game(event){
 }
 }
 //  to run game function
+// watch for them clicks
     rock.addEventListener('click',game);
     scissors.addEventListener('click',game);
     paper.addEventListener('click',game);
 
 // resetGame function
+// let the game be nice and tidy when someone wins
 function resetGame (){
     round=0;
     uiResult.textContent="Choose One!";
@@ -192,6 +202,6 @@ function resetGame (){
     overlay.classList.add('inactive');
     modal.classList.add('inactive');
 }
-// image setter funtion
+
 
 reset.addEventListener('click',resetGame);
