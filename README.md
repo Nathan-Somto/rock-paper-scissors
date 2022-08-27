@@ -14,4 +14,3 @@
 
   Here is a picture depicting the project.
   ![project image](images/projectImage.png)
-
